@@ -28,13 +28,16 @@ jobs:
       - name: Trivy file scan
         run: trivy fs . > trivyfs.txt
 
-      - name: Docker build and push 
-        run: |
-          docker build -t tic-tac-toe .
-          docker tag tic-tac-toe geraldakenji/tic-tac-toe:latest
-          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-          docker push geraldakenji/tic-tac-toe:latest 
-        env:
-            DOCKER_CLI_ACI: 1
+      # - name: Docker build and push 
+      #   run: |
+      #     docker build -t tic-tac-toe .
+      #     docker tag tic-tac-toe geraldakenji/tic-tac-toe:latest
+      #     docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+      #     docker push geraldakenji/tic-tac-toe:latest 
+      #   env:
+      #       DOCKER_CLI_ACI: 1
+
+      # - name: image scan
+      #   run: trivy image geraldakenji/tic-tac-toe:latest > trivyimage.txt
             
 
