@@ -25,3 +25,6 @@ jobs:
       - name: npm install dependency 
         run: npm install 
 
+      - name: Trivy file scan
+        run: trivy fs . > trivyfs.txt
+
