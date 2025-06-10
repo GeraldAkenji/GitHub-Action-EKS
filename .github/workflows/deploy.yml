@@ -36,5 +36,5 @@ jobs:
           docker push geraldakenji/tic-tac-toe:latest 
         env:
             DOCKER_CLI_ACI: 1
-            DOCKER_BUILDKIT: 1
+            
 
